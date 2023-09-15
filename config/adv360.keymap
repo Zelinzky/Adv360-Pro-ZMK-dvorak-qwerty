@@ -32,6 +32,7 @@
             quick-tap-ms = <175>;
             hold-trigger-key-positions = <66 35 36 52 67 65 7 8 9 10 11 12 13 21 22 23 24 25 26 27 38 39 40 41 42 43 44 45 54 55 56 57 58 59 70 71 72 73 74 75 37 53 69 68>;
             hold-trigger-on-release;
+            global-quick-tap;
         };
         hm_r: hm_r {
             compatible = "zmk,behavior-hold-tap";
@@ -46,6 +47,7 @@
             flavor = "balanced";
             hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67 37 38 53 68 69 70>;
             hold-trigger-on-release;
+            global-quick-tap;
         };
     };
 
