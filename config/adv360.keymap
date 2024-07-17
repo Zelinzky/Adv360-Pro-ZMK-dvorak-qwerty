@@ -13,9 +13,10 @@
 #define QWERTYP 2
 #define QWERTYPHR 3
 #define NAVIGATION 4
-#define KEYPAD 5
-#define FN 6
-#define MOD 7
+#define NUMPAD 5
+#define KEYPAD 6
+#define FN 7
+#define MOD 8
 
 
 / {
@@ -71,133 +72,133 @@
             label = "grave_pipe";
             #binding-cells = <0>;
             bindings = <&kp GRAVE>, <&kp PIPE>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         ppipe: pipe_pipe {
             compatible = "zmk,behavior-mod-morph";
             label = "pipe_pipe";
             #binding-cells = <0>;
             bindings = <&kp PIPE>, <&kp PIPE>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         pkp_n1: plus_kp_n1 {
             compatible = "zmk,behavior-mod-morph";
             label = "plus_kp_n1";
             #binding-cells = <0>;
-            bindings = <&kp PLUS>, <&kp KP_N1>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            bindings = <&kp PLUS>, <&kp N1>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         lkp_n2: left_bracket_kp_n2 {
             compatible = "zmk,behavior-mod-morph";
             label = "left_bracket_kp_n2";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACKET>, <&kp KP_N2>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            bindings = <&kp LEFT_BRACKET>, <&kp N2>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         lkp_n3: left_brace_kp_n3 {
             compatible = "zmk,behavior-mod-morph";
             label = "left_brace_kp_n3";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACE>, <&kp KP_N3>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            bindings = <&kp LEFT_BRACE>, <&kp N3>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         lkp_n4: left_parenthesis_kp_n4 {
             compatible = "zmk,behavior-mod-morph";
             label = "left_parenthesis_kp_n4";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp KP_N4>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp N4>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         akp_n5: amps_kp_n5 {
             compatible = "zmk,behavior-mod-morph";
             label = "amps_kp_n5";
             #binding-cells = <0>;
-            bindings = <&kp AMPS>, <&kp KP_N5>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            bindings = <&kp AMPS>, <&kp N5>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         ekp_n6: equal_kp_n6 {
             compatible = "zmk,behavior-mod-morph";
             label = "equal_kp_n6";
             #binding-cells = <0>;
-            bindings = <&kp EQUAL>, <&kp KP_N6>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            bindings = <&kp EQUAL>, <&kp N6>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         rkp_n7: right_parenthesis_kp_n7 {
             compatible = "zmk,behavior-mod-morph";
             label = "right_parenthesis_kp_n7";
             #binding-cells = <0>;
-            bindings = <&kp RIGHT_PARENTHESIS>, <&kp KP_N7>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            bindings = <&kp RIGHT_PARENTHESIS>, <&kp N7>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         rkp_n8: right_brace_kp_n8 {
             compatible = "zmk,behavior-mod-morph";
             label = "right_brace_kp_n8";
             #binding-cells = <0>;
-            bindings = <&kp RIGHT_BRACE>, <&kp KP_N8>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            bindings = <&kp RIGHT_BRACE>, <&kp N8>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         rkp_n9: right_bracket_kp_n9 {
             compatible = "zmk,behavior-mod-morph";
             label = "right_bracket_kp_n9";
             #binding-cells = <0>;
-            bindings = <&kp RIGHT_BRACKET>, <&kp KP_N9>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            bindings = <&kp RIGHT_BRACKET>, <&kp N9>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         skp_n0: star_kp_n0 {
             compatible = "zmk,behavior-mod-morph";
             label = "star_kp_n0";
             #binding-cells = <0>;
-            bindings = <&kp STAR>, <&kp KP_N0>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            bindings = <&kp STAR>, <&kp N0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         eprcnt: excl_prcnt {
             compatible = "zmk,behavior-mod-morph";
             label = "excl_prcnt";
             #binding-cells = <0>;
             bindings = <&kp EXCL>, <&kp PRCNT>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         dgrave: dllr_grave {
             compatible = "zmk,behavior-mod-morph";
             label = "dllr_grave";
             #binding-cells = <0>;
             bindings = <&kp DLLR>, <&kp GRAVE>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         dtilde: dllr_tilde {
             compatible = "zmk,behavior-mod-morph";
             label = "dllr_tilde";
             #binding-cells = <0>;
             bindings = <&kp DLLR>, <&kp TILDE>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         ggrave: grave_grave {
             compatible = "zmk,behavior-mod-morph";
             label = "grave_grave";
             #binding-cells = <0>;
             bindings = <&kp GRAVE>, <&kp GRAVE>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         pgrave: pipe_grave {
             compatible = "zmk,behavior-mod-morph";
             label = "pipe_grave";
             #binding-cells = <0>;
             bindings = <&kp PIPE>, <&kp GRAVE>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         bhash: bslh_hash {
             compatible = "zmk,behavior-mod-morph";
             label = "bslh_hash";
             #binding-cells = <0>;
             bindings = <&kp BSLH>, <&kp HASH>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         acaret: at_caret {
             compatible = "zmk,behavior-mod-morph";
             label = "at_caret";
             #binding-cells = <0>;
             bindings = <&kp AT>, <&kp CARET>;
-            mods = <(LGUI|LSHIFT|RGUI|RSHIFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -218,7 +219,7 @@
             bindings = <
                 ______  ______        ______        ______         ______         ______        ______                                                  ______  ______  ______         ______         ______        ______           ______
                 ______  ______        ______        ______         ______         ______        ______                                                  ______  ______  ______         ______         ______        ______           ______
-                ______  &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D  &hm_l LSHFT F  &lt KEYPAD G  ______  ______  ______                  ______  ______  ______  ______  &hm_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RGUI SEMI  ______
+                ______  &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D  &hm_l LSHFT F  &lt NUMPAD G  ______  ______  ______                  ______  ______  ______  ______  &hm_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RGUI SEMI  ______
                 ______  ______        ______        ______         ______         ______                        ______                  ______                  ______  ______         ______         ______        ______           ______
                 ______  ______        ______        ______         ______                       ______  ______  &lt NAVIGATION END      ______  ______  ______          ______         ______         ______        ______           ______
             >;
@@ -238,7 +239,7 @@
             bindings = <
                 &pgrave  &pkp_n1       &lkp_n2       &lkp_n3        &lkp_n4        &akp_n5       ______                                                  ______  &ekp_n6  &rkp_n7        &rkp_n8        &rkp_n9       &skp_n0          &eprcnt
                 ______   ______        ______        ______         ______         ______        ______                                                  ______  ______   ______         ______         ______        ______           &bhash
-                ______   &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D  &hm_l LSHFT F  &lt KEYPAD G  ______  ______  ______                  ______  ______  ______  ______   &hm_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RGUI SEMI  &kp MINUS
+                ______   &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D  &hm_l LSHFT F  &lt NUMPAD G  ______  ______  ______                  ______  ______  ______  ______   &hm_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RGUI SEMI  &kp MINUS
                 ______   ______        ______        ______         ______         ______                        ______                  ______                  ______   ______         ______         ______        ______           ______
                 ______   &dtilde       ______        ______         ______                       ______  ______  &lt NAVIGATION END      ______  ______  ______           ______         ______         &kp SQT       &acaret          ______
             >;
@@ -254,6 +255,16 @@
             >;
         };
 
+        numpad {
+            bindings = <
+                ______  ______  ______  ______  ______  ______  ______                                      ______     ______  ______  ______  ______  ______  ______
+                ______  ______  ______  ______  ______  ______  ______                                      ______     ______  &kp N7  &kp N8  &kp N9  ______  ______
+                ______  ______  ______  ______  ______  ______  ______  ______  ______      ______  ______  ______     ______  &kp N4  &kp N5  &kp N6  ______  ______
+                ______  ______  ______  ______  ______  ______                  ______      ______                     ______  &kp N1  &kp N2  &kp N3  ______  ______
+                ______  ______  ______  ______  ______          ______  ______  ______      ______  ______  &kp N0             ______  ______  &kp DOT ______  ______
+            >;
+        };
+
         keypad {
             bindings = <
                 ______  ______  ______  ______  ______  ______  ______                                      ______     ______  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  ______
@@ -266,7 +277,7 @@
 
         fn {
             bindings = <
-                &kp F1  &kp F2  &kp F3     &kp F4  &kp F5  &kp F6  ______                                           ______  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+                &kp F1  &kp F2  &kp F3     &kp F4  &kp F5  &kp F6  &tog NUMPAD                                      ______  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
                 ______  ______  ______     ______  ______  ______  &to QWERTY                                       xxxxxx  ______  ______  ______  ______   ______   ______
                 ______  ______  ______     ______  ______  ______  &to QWERTYP  ______  ______      ______  ______  xxxxxx  ______  ______  ______  ______   ______   ______
                 ______  ______  ______     ______  ______  ______                       ______      ______                  ______  ______  ______  ______   ______   ______
