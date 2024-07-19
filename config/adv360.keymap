@@ -121,6 +121,13 @@
             bindings = <&kp EQUAL>, <&kp N6>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        skp_n6: star_kp_n6 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "star_kp_n6";
+            #binding-cells = <0>;
+            bindings = <&kp STAR>, <&kp N6>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         rkp_n7: right_parenthesis_kp_n7 {
             compatible = "zmk,behavior-mod-morph";
             label = "right_parenthesis_kp_n7";
@@ -149,6 +156,13 @@
             bindings = <&kp STAR>, <&kp N0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        ekp_n0: equal_kp_n0 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "equal_kp_n0";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL>, <&kp N0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         eprcnt: excl_prcnt {
             compatible = "zmk,behavior-mod-morph";
             label = "excl_prcnt";
@@ -168,6 +182,13 @@
             label = "dllr_tilde";
             #binding-cells = <0>;
             bindings = <&kp DLLR>, <&kp TILDE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        tcaret: tilde_caret {
+            compatible = "zmk,behavior-mod-morph";
+            label = "tilde_caret";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE>, <&kp CARET>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         ggrave: grave_grave {
@@ -198,6 +219,13 @@
             bindings = <&kp AT>, <&kp CARET>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        adllr: at_dllr {
+            compatible = "zmk,behavior-mod-morph";
+            label = "at_dllr";
+            #binding-cells = <0>;
+            bindings = <&kp AT>, <&kp DLLR>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -205,7 +233,7 @@
 
         qwerty {
             bindings = <
-                &kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &tog KEYPAD                                                 &mo MOD    &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+                &kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &tog NUMPAD                                                 &mo MOD    &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
                 &kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &tog PRGSYM                                                 &kp PSCRN  &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
                 &kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &tog HOMERW  &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &kp INS    &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
                 &kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                           &kp HOME      &kp PG_UP                        &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
@@ -215,11 +243,11 @@
 
         prog_symbols {
             bindings = <
-                &pgrave  &pkp_n1  &lkp_n2  &lkp_n3  &lkp_n4  &akp_n5  ______                                      ______  &ekp_n6  &rkp_n7  &rkp_n8  &rkp_n9  &skp_n0  &eprcnt
+                &pgrave  &pkp_n1  &lkp_n2  &lkp_n3  &lkp_n4  &akp_n5  ______                                      ______  &skp_n6  &rkp_n7  &rkp_n8  &rkp_n9  &ekp_n0  &eprcnt
                 ______   ______   ______   ______   ______   ______   ______                                      ______  ______   ______   ______   ______   ______   &bhash
                 ______   ______   ______   ______   ______   ______   ______  ______  ______      ______  ______  ______  ______   ______   ______   ______   ______   &kp MINUS
                 ______   ______   ______   ______   ______   ______                   ______      ______                  ______   ______   ______   ______   ______   ______
-                ______   &dtilde  ______   ______   ______            ______  ______  ______      ______  ______  ______           ______   ______   &kp SQT  &acaret  ______
+                ______   &tcaret  ______   ______   ______            ______  ______  ______      ______  ______  ______           ______   ______   &kp SQT  &adllr   ______
             >;
         };
 
@@ -255,7 +283,7 @@
 
         fn {
             bindings = <
-                &kp F1  &kp F2  &kp F3     &kp F4  &kp F5  &kp F6  &tog NUMPAD                                      ______  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+                &kp F1  &kp F2  &kp F3     &kp F4  &kp F5  &kp F6  &tog KEYPAD                                      ______  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
                 ______  ______  ______     ______  ______  ______  ______                                           xxxxxx  ______  ______  ______  ______   ______   ______
                 ______  ______  ______     ______  ______  ______  ______       ______  ______      ______  ______  xxxxxx  ______  ______  ______  ______   ______   ______
                 ______  ______  ______     ______  ______  ______                       ______      ______                  ______  ______  ______  ______   ______   ______
