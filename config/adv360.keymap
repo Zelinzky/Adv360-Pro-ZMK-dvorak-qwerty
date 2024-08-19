@@ -18,6 +18,10 @@
 #define FN 7
 #define MOD 8
 
+&lt {
+    quick_tap_ms = <175>;
+};
+
 
 / {
     behaviors {
@@ -265,11 +269,11 @@
 
         homerow_no_bot {
             bindings = <
-                ______   ______        ______        ______         ______         ______  ______                                      ______  ______  ______         ______         ______        ______           ______
-                ______   ______        ______        ______         ______         ______  ______                                      ______  ______  ______         ______         ______        ______           ______
-                ______   &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D  &hm_l LSHFT F  ______  ______  ______  ______      ______  ______  ______  ______  &hm_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RGUI SEMI  ______
-                &tcaret  ______        ______        ______         ______         ______                  ______      ______                  ______  ______         ______         ______        ______           &adllr
-                ______   xxxxxx        xxxxxx        xxxxxx         xxxxxx                 ______  ______  ______      ______  ______  ______          xxxxxx         xxxxxx         xxxxxx        xxxxxx           ______
+                ______   ______        ______        ______         ______         ______  ______                                                       ______  ______  ______         ______         ______        ______           ______
+                ______   ______        ______        ______         ______         ______  ______                                                       ______  ______  ______         ______         ______        ______           ______
+                ______   &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D  &hm_l LSHFT F  &kp G   ______           xxxxxx          xxxxxx      xxxxxx  xxxxxx  ______  ______  &hm_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RGUI SEMI  ______
+                &tcaret  ______        ______        ______         ______         ______                                   xxxxxx      xxxxxx                  ______  ______         ______         ______        ______           &adllr
+                ______   xxxxxx        xxxxxx        xxxxxx         xxxxxx                 &lt NUMPAD BSPC  &lt NAVGTN DEL  xxxxxx      xxxxxx  ______  ______          xxxxxx         xxxxxx         xxxxxx        xxxxxx           ______
             >;
         };
 
