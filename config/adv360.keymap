@@ -215,6 +215,13 @@
             bindings = <&kp PIPE>, <&kp GRAVE>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        hgrave: hash_grave {
+            compatible = "zmk,behavior-mod-morph";
+            label = "hash_grave";
+            #binding-cells = <0>;
+            bindings = <&kp HASH>, <&kp GRAVE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         bhash: bslh_hash {
             compatible = "zmk,behavior-mod-morph";
             label = "bslh_hash";
@@ -253,11 +260,11 @@
 
         prog_symbols {
             bindings = <
-                &pgrave  &pkp_n1  &lkp_n2  &lkp_n3  &lkp_n4  &akp_n5       ______                                              ______  &ekp_n6  &rkp_n7  &rkp_n8  &rkp_n9  &skp_n0  &eprcnt
-                ______   ______   ______   ______   ______   ______        ______                                              ______  ______   ______   ______   ______   ______   &bhash
-                ______   ______   ______   ______   ______   &lt NUMPAD G  ______  ______  ______              ______  ______  ______  ______   ______   ______   ______   ______   &kp MINUS
-                ______   ______   ______   ______   ______   ______                        ______              ______                  ______   ______   ______   ______   ______   ______
-                ______   &tcaret  ______   ______   ______                 ______  ______  &lt NAVGTN END      ______  ______  ______           ______   ______   &kp SQT  &adllr   ______
+                &hgrave  &pkp_n1  &lkp_n2  &lkp_n3  &lkp_n4  &akp_n5       ______                                              ______  &ekp_n6  &rkp_n7  &rkp_n8  &rkp_n9    &skp_n0  &eprcnt
+                ______   ______   ______   ______   ______   ______        ______                                              ______  ______   ______   ______   ______     ______   ______
+                ______   ______   ______   ______   ______   &lt NUMPAD G  ______  ______  ______              ______  ______  ______  ______   ______   ______   ______     ______   ______
+                ______   ______   ______   ______   ______   ______                        ______              ______                  ______   ______   ______   ______     ______   ______
+                ______   &tcaret  ______   ______   ______                 ______  ______  &lt NAVGTN END      ______  ______  ______           ______   ______   &kp MINUS  &adllr   ______
             >;
         };
 
@@ -273,11 +280,11 @@
 
         homerow_no_bot {
             bindings = <
-                ______   ______        ______        ______         ______         ______        xxxxxx                                             xxxxxx  ______        ______         ______         ______        ______           ______
-                ______   ______        ______        ______         ______         ______        xxxxxx                                             xxxxxx  ______        ______         ______         ______        ______           ______
-                &kp SQT  &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D  &hm_l LSHFT F  &hm_l LHPR G  xxxxxx  xxxxxx     xxxxxx      xxxxxx  xxxxxx      xxxxxx  &hm_r RHPR H  &hm_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RGUI SEMI  ______
-                &tcaret  ______        ______        ______         ______         &hm_l LMEH B                     xxxxxx      xxxxxx                      &hm_r RMEH N  ______         ______         ______        ______           &adllr
-                xxxxxx   xxxxxx        xxxxxx        xxxxxx         xxxxxx                       ______  &mo NUMPAD xxxxxx      xxxxxx  &mo NAVGTN  ______                xxxxxx         xxxxxx         xxxxxx        xxxxxx           xxxxxx
+                ______     ______        ______        ______         ______         ______        xxxxxx                                             xxxxxx  ______        ______         ______         ______        ______           ______
+                ______     ______        ______        ______         ______         ______        xxxxxx                                             xxxxxx  ______        ______         ______         ______        ______           ______
+                &kp MINUS  &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D  &hm_l LSHFT F  &hm_l LHPR G  xxxxxx  xxxxxx     xxxxxx      xxxxxx  xxxxxx      xxxxxx  &hm_r RHPR H  &hm_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RGUI SEMI  ______
+                &tcaret    ______        ______        ______         ______         &hm_l LMEH B                     xxxxxx      xxxxxx                      &hm_r RMEH N  ______         ______         ______        ______           &adllr
+                xxxxxx     xxxxxx        xxxxxx        xxxxxx         xxxxxx                       ______  &mo NUMPAD xxxxxx      xxxxxx  &mo NAVGTN  ______                xxxxxx         xxxxxx         xxxxxx        xxxxxx           xxxxxx
             >;
         };
 
