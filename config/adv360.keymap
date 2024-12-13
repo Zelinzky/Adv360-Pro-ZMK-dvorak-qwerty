@@ -320,11 +320,11 @@
 
         fn {
             bindings = <
-                &kp F1  &kp F2    &kp F3     &kp F4     &kp F5     &kp F6  &tog KEYPAD                                      &mo MOD    &kp F7  &kp F8     &kp F9     &kp F10   &kp F11   &kp F12
-                ______  ______    ______     ______     ______     ______  &to QWERTY                                       &kp PSCRN  ______  ______     ______     ______    ______    ______
-                ______  &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  ______  &tog HOMENB  ______  ______      ______  ______  &kp INS    ______  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  ______
-                ______  ______    ______     ______     ______     ______                       ______      ______                     ______  ______     ______     ______    ______    ______
-                ______  ______    &kp K_APP  ______     ______             ______       ______  ______      ______  ______  ______             ______     ______     ______    ______    ______
+                &kp F1  &kp F2    &kp F3     &kp F4     &kp F5     &kp F6  &tog KEYPAD                                      &mo MOD    &kp F7    &kp F8     &kp F9     &kp F10   &kp F11   &kp F12
+                ______  ______    ______     ______     ______     ______  &to QWERTY                                       &kp PSCRN  C_VOL_UP  ______     ______     ______    ______    ______
+                ______  &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  ______  &tog HOMENB  ______  ______      ______  ______  &kp INS    C_MUTE    &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  ______
+                ______  ______    ______     ______     ______     ______                       ______      ______                     C_VOL_DN  ______     ______     ______    ______    ______
+                ______  ______    &kp K_APP  ______     ______             ______       ______  ______      ______  ______  ______               ______     ______     ______    ______    ______
             >;
         };
 
