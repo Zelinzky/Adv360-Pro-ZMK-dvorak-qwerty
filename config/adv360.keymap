@@ -282,7 +282,7 @@
                 &tcaret    ______        ______        ______         ______         &hm_l LMEH B                               xxxxxx      xxxxxx                               &hm_r RMEH N  ______         ______         ______        ______           &adllr
                 xxxxxx     xxxxxx        xxxxxx        xxxxxx         xxxxxx                       &lt_bpsc VYGRNM 0   &kp ESC  xxxxxx      xxxxxx  &kp ENTER  &lt VYGRNV SPACE                xxxxxx         xxxxxx         xxxxxx        xxxxxx           xxxxxx
             >;
-        }
+        };
 
         voyager_num {
             bindings = <
