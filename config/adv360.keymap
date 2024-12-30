@@ -13,14 +13,13 @@
 #define RMEH RS(RA(RCTRL))
 
 #define QWERTY 0
-#define PRGSYM 1
-#define HOMERW 2
-#define HOMENB 3
-#define NAVGTN 4
+#define VOYAGR 1
+#define VYGRNM 2
+#define VYGRNV 3
+#define VYGRFN 4
 #define NUMPAD 5
-#define KEYPAD 6
-#define FN 7
-#define MOD 8
+#define FN 6
+#define MOD 7
 
 &lt {
     quick_tap_ms = <175>;
@@ -243,6 +242,23 @@
             bindings = <&kp AT>, <&kp DLLR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        bdel: bspc_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "bspc_del";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        lt_bspc: layer_tap_bspc_del {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_BACKSPACE_DELETE";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&bdel>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            global-quick-tap;
+        };
     };
 
     keymap {
@@ -251,64 +267,54 @@
         qwerty {
             bindings = <
                 &kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &tog NUMPAD                                                 &mo MOD    &kp N6  &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS
-                &kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &to PRGSYM                                                  &kp PSCRN  &kp Y   &kp U     &kp I      &kp O     &kp P     &kp BSLH
-                &kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   &tog HOMERW  &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &kp INS    &kp H   &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
+                &kp TAB    &kp Q      &kp W     &kp E     &kp R      &kp T   &to VOYAGR                                                  &kp PSCRN  &kp Y   &kp U     &kp I      &kp O     &kp P     &kp BSLH
+                &kp ESC    &kp A      &kp S     &kp D     &kp F      &kp G   xxxxxx       &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &kp INS    &kp H   &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
                 &kp LSHFT  &kp Z      &kp X     &kp C     &kp V      &kp B                           &kp HOME      &kp PG_UP                        &kp N   &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
                 &mo FN     &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC     &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp SPACE          &kp DOWN  &kp UP     &kp LBKT  &kp RBKT  &mo FN
             >;
         };
 
-        prog_symbols {
+        voyager_base {
             bindings = <
-                &hgrave  &pkp_n1  &lkp_n2  &lkp_n3  &lkp_n4  &akp_n5       ______                                              ______  &ekp_n6  &rkp_n7  &rkp_n8  &rkp_n9    &skp_n0  &eprcnt
-                ______   ______   ______   ______   ______   ______        ______                                              ______  ______   ______   ______   ______     ______   ______
-                ______   ______   ______   ______   ______   &lt NUMPAD G  ______  ______  ______              ______  ______  ______  ______   ______   ______   ______     ______   ______
-                ______   ______   ______   ______   ______   ______                        ______              ______                  ______   ______   ______   ______     ______   ______
-                ______   &tcaret  ______   ______   ______                 ______  ______  &lt NAVGTN END      ______  ______  ______           ______   ______   &kp MINUS  &adllr   ______
+                &hgrave    &pkp_n1       &lkp_n2       &lkp_n3        &lkp_n4       &akp_n5        xxxxxx                                                      xxxxxx            &ekp_n6       &rkp_n7        &rkp_n8        &rkp_n9       &skp_n0          &eprcnt
+                ______     ______        ______        ______         ______         ______        xxxxxx                                                      xxxxxx            ______        ______         ______         ______        ______           ______
+                &kp MINUS  &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &hm_l LSHFT F  &hm_l LHPR G  xxxxxx              xxxxxx   xxxxxx      xxxxxx  xxxxxx     xxxxxx            &hm_r RHPR H  &hm_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RGUI SEMI  ______
+                &tcaret    ______        ______        ______         ______         &hm_l LMEH B                               xxxxxx      xxxxxx                               &hm_r RMEH N  ______         ______         ______        ______           &adllr
+                xxxxxx     xxxxxx        xxxxxx        xxxxxx         xxxxxx                       &lt_bpsc VYGRNM 0   &kp ESC  xxxxxx      xxxxxx  &kp ENTER  &lt VYGRNV SPACE                xxxxxx         xxxxxx         xxxxxx        xxxxxx           xxxxxx
+            >;
+        }
+
+        voyager_num {
+            bindings = <
+                ______      ______    ______    ______     ______     ______    ______                                      ______            ______  &kp N7  &kp N8  &kp N9  &kp STAR   ______
+                ______      ______    ______    ______     ______     ______    ______                                      ______            ______  &kp N4  &kp N5  &kp N6  &kp MINUS  ______
+                &caps_word  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp LHPR  ______  ______  ______      ______  ______  ______            ______  &kp N1  &kp N2  &kp N3  &kp PLUS   ______
+                ______      ______    ______    ______     ______     &kp LMEH                  ______      ______                            ______  &kp N0  ______  ______  ______     ______
+                ______      ______    ______    ______     ______               ______  ______  ______      ______  ______  &lt VYGRFN SPACE          ______  ______  ______  ______     ______
             >;
         };
 
-        homerow {
+        voyager_nav {
             bindings = <
-                ______  ______        ______        ______         ______         ______  ______                                      ______  ______  ______         ______         ______        ______           ______
-                ______  ______        ______        ______         ______         ______  ______                                      ______  ______  ______         ______         ______        ______           ______
-                ______  &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D  &hm_l LSHFT F  ______  ______  ______  ______      ______  ______  ______  ______  &hm_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RGUI SEMI  ______
-                ______  ______        ______        ______         ______         ______                  ______      ______                  ______  ______         ______         ______        ______           ______
-                ______  ______        ______        ______         ______                 ______  ______  ______      ______  ______  ______          ______         ______         ______        ______           ______
+                ______  ______    ______     ______     ______     ______    ______                                          ______  &kp C_VOL_DN  &kp C_MUTE  ______      &kp C_VOL_UP  ______  &kp INS
+                ______  ______    ______     ______     ______     ______    ______                                          ______  &kp HOME      &kp PG_DN   &kp PG_UP   &kp END       ______  &kp PSCRN
+                ______  &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &kp LHPR  ______      ______  ______      ______  ______  ______  &kp LEFT      &kp DOWN    &kp UP      &kp RIGHT     ______  &kp SLCK
+                ______  ______    &kp K_APP  ______     ______     &kp LMEH                      ______      ______                  &kp C_PREV    &kp C_PP    &kp C_STOP  &kp C_NEXT    ______  &kp PAUSE_BREAK
+                ______  ______    ______     ______     ______               &mo VYGRFN  ______  ______      ______  ______  ______                ______      ______      ______        ______  ______
             >;
         };
-
-        homerow_no_bot {
+        
+        voyager_fn {
             bindings = <
-                ______     ______        ______        ______         ______         ______        xxxxxx                                             xxxxxx  ______        ______         ______         ______        ______           ______
-                ______     ______        ______        ______         ______         ______        xxxxxx                                             xxxxxx  ______        ______         ______         ______        ______           ______
-                &kp MINUS  &hm_l LGUI A  &hm_l LALT S  &hm_l LCTRL D  &hm_l LSHFT F  &hm_l LHPR G  xxxxxx  xxxxxx     xxxxxx      xxxxxx  xxxxxx      xxxxxx  &hm_r RHPR H  &hm_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RGUI SEMI  ______
-                &tcaret    ______        ______        ______         ______         &hm_l LMEH B                     xxxxxx      xxxxxx                      &hm_r RMEH N  ______         ______         ______        ______           &adllr
-                xxxxxx     xxxxxx        xxxxxx        xxxxxx         xxxxxx                       ______  &mo NUMPAD xxxxxx      xxxxxx  &mo NAVGTN  ______                xxxxxx         xxxxxx         xxxxxx        xxxxxx           xxxxxx
-            >;
-        };
-
-        navigation {
-            bindings = <
-                ______   ______    ______    ______     ______     ______    ______                                       ______  ______    ______     ______     ______     ______  ______
-                ______   ______    ______    ______     ______     ______    ______                                       ______  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    ______  ______
-                &kp ESC  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp LHPR  ______   ______  ______      ______  ______  ______  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  ______  ______
-                ______   ______    ______    ______     ______     &kp LMEH                   ______      ______                  ______    ______     ______     ______     ______  ______
-                ______   ______    ______    ______     ______               &kp DEL  &mo FN  ______      ______  ______  ______            ______     ______     ______     ______  ______
+                ______  ______    ______    ______     ______     ______    ______                                          &mo MOD  ______  &kp F7   &kp F8   &kp F9   ______  ______
+                ______  ______    ______    ______     ______     ______    &to QWERTY                                      ______   ______  &kp F4   &kp F5   &kp F6   ______  ______
+                ______  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp LHPR  ______      ______  ______      ______  ______  ______   ______  &kp F1   &kp F2   &kp F3   ______  ______
+                ______  ______    ______    ______     ______     &kp LMEH                      ______      ______                   ______  &kp F10  &kp F11  &kp F12  ______  ______
+                ______  ______    ______    ______     ______               ______      ______  ______      ______  ______  ______           ______   ______   ______   ______  ______
             >;
         };
 
         numpad {
-            bindings = <
-                ______    ______    ______    ______     ______     ______    ______                                      ______     ______  &kp N7  &kp N8  &kp N9  ______  ______
-                ______    ______    ______    ______     ______     ______    ______                                      ______     ______  &kp N4  &kp N5  &kp N6  ______  ______
-                &kp CAPS  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp LHPR  ______  ______  ______      ______  ______  ______     ______  &kp N1  &kp N2  &kp N3  ______  ______
-                ______    ______    ______    ______     ______     &kp LMEH                  ______      ______                     ______  &kp N0  ______  ______  ______  ______
-                ______    ______    ______    ______     ______               ______  ______  ______      ______  &mo FN  &kp ENTER          ______  ______  ______  ______  ______
-            >;
-        };
-
-        keypad {
             bindings = <
                 ______  ______  ______  ______  ______  ______  ______                                      ______     ______  &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  ______
                 ______  ______  ______  ______  ______  ______  ______                                      ______     ______  &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     ______
@@ -320,11 +326,11 @@
 
         fn {
             bindings = <
-                &kp F1  &kp F2    &kp F3     &kp F4     &kp F5     &kp F6  &tog KEYPAD                                      &mo MOD    &kp F7    &kp F8     &kp F9     &kp F10   &kp F11   &kp F12
-                ______  ______    ______     ______     ______     ______  &to QWERTY                                       &kp PSCRN  C_VOL_UP  ______     ______     ______    ______    ______
-                ______  &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  ______  &tog HOMENB  ______  ______      ______  ______  &kp INS    C_MUTE    &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  ______
-                ______  ______    ______     ______     ______     ______                       ______      ______                     C_VOL_DN  ______     ______     ______    ______    ______
-                ______  ______    &kp K_APP  ______     ______             ______       ______  ______      ______  ______  ______               ______     ______     ______    ______    ______
+                &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &tog KEYPAD                                      &mo MOD  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+                ______  ______  ______  ______  ______  ______  ______                                           ______   ______  ______  ______  ______   ______   ______
+                ______  ______  ______  ______  ______  ______  ______       ______  ______      ______  ______  ______   ______  ______  ______  ______   ______   ______
+                ______  ______  ______  ______  ______  ______                       ______      ______                   ______  ______  ______  ______   ______   ______
+                ______  ______  ______  ______  ______          ______       ______  ______      ______  ______  ______           ______  ______  ______   ______   ______
             >;
         };
 
