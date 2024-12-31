@@ -25,7 +25,8 @@
     quick_tap_ms = <175>;
 };
 &caps_word {
-    continue-list = <UNDERSCORE>;
+    /delete-property/ ignore-modifiers;
+    continue-list = <UNDERSCORE LSHFT RSHFT DEL BSPC>;
 };
 
 
