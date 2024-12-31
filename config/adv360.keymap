@@ -24,9 +24,9 @@
 &lt {
     quick_tap_ms = <175>;
 };
+
 &caps_word {
-    /delete-property/ ignore-modifiers;
-    continue-list = <UNDERSCORE LSHFT RSHFT DEL BSPC>;
+    continue-list = <UNDERSCORE BACKSPACE DELETE (RS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_MINUS_AND_UNDERSCORE))) >;
 };
 
 
