@@ -276,21 +276,21 @@
 
         voyager_base {
             bindings = <
-                &hgrave    &pkp_n1       &lkp_n2       &lkp_n3        &lkp_n4       &akp_n5        xxxxxx                                                      xxxxxx            &ekp_n6       &rkp_n7        &rkp_n8        &rkp_n9       &skp_n0          &eprcnt
-                ______     ______        ______        ______         ______         ______        xxxxxx                                                      xxxxxx            ______        ______         ______         ______        ______           ______
-                &kp MINUS  &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &hm_l LSHFT F  &hm_l LHPR G  xxxxxx              xxxxxx   xxxxxx      xxxxxx  xxxxxx     xxxxxx            &hm_r RHPR H  &hm_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RGUI SEMI  ______
-                &tcaret    ______        ______        ______         ______         &hm_l LMEH B                               xxxxxx      xxxxxx                               &hm_r RMEH N  ______         ______         ______        ______           &adllr
-                xxxxxx     xxxxxx        xxxxxx        xxxxxx         xxxxxx                       &lt_bspc VYGRNM 0   &kp ESC  xxxxxx      xxxxxx  &kp ENTER  &lt VYGRNV SPACE                xxxxxx         xxxxxx         xxxxxx        xxxxxx           xxxxxx
+                &hgrave    &pkp_n1       &lkp_n2       &lkp_n3        &lkp_n4       &akp_n5        xxxxxx                                                        xxxxxx     &ekp_n6       &rkp_n7        &rkp_n8        &rkp_n9       &skp_n0          &eprcnt
+                ______     ______        ______        ______         ______         ______        xxxxxx                                                        xxxxxx     ______        ______         ______         ______        ______           ______
+                &kp MINUS  &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &hm_l LSHFT F  &hm_l LHPR G  xxxxxx  xxxxxx          xxxxxx      xxxxxx  xxxxxx            xxxxxx     &hm_r RHPR H  &hm_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RGUI SEMI  ______
+                &tcaret    ______        ______        ______         ______         &hm_l LMEH B                          xxxxxx      xxxxxx                               &hm_r RMEH N  ______         ______         ______        ______           &adllr
+                xxxxxx     xxxxxx        xxxxxx        xxxxxx         xxxxxx                       &bdel   &lt VYGRNM ESC  xxxxxx      xxxxxx  &lt VYGRNV ENTER  &kp SPACE                xxxxxx         xxxxxx         xxxxxx        xxxxxx           xxxxxx
             >;
         };
 
         voyager_num {
             bindings = <
-                ______      ______    ______    ______     ______     ______    ______                                      ______            ______  &kp N7  &kp N8  &kp N9  &kp STAR   ______
-                ______      ______    ______    ______     ______     ______    ______                                      ______            ______  &kp N4  &kp N5  &kp N6  &kp MINUS  ______
-                &caps_word  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp LHPR  ______  ______  ______      ______  ______  ______            ______  &kp N1  &kp N2  &kp N3  &kp PLUS   ______
-                ______      ______    ______    ______     ______     &kp LMEH                  ______      ______                            ______  &kp N0  ______  ______  ______     ______
-                ______      ______    ______    ______     ______               ______  ______  ______      ______  ______  &lt VYGRFN SPACE          ______  ______  ______  ______     ______
+                ______      ______    ______    ______     ______     ______    ______                                               ______  ______  &kp N7  &kp N8  &kp N9  &kp STAR   ______
+                ______      ______    ______    ______     ______     ______    ______                                               ______  ______  &kp N4  &kp N5  &kp N6  &kp MINUS  ______
+                &caps_word  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp LHPR  ______  ______  ______      ______  ______           ______  ______  &kp N1  &kp N2  &kp N3  &kp PLUS   ______
+                ______      ______    ______    ______     ______     &kp LMEH                  ______      ______                           ______  &kp N0  ______  ______  ______     ______
+                ______      ______    ______    ______     ______               ______  ______  ______      ______  &lt VYGRFN ENTER ______          ______  ______  ______  ______     ______
             >;
         };
 
@@ -298,9 +298,9 @@
             bindings = <
                 ______  ______    ______     ______     ______     ______    ______                                          ______  &kp C_VOL_DN  &kp C_MUTE  ______      &kp C_VOL_UP  ______  &kp INS
                 ______  ______    ______     ______     ______     ______    ______                                          ______  &kp HOME      &kp PG_DN   &kp PG_UP   &kp END       ______  &kp PSCRN
-                ______  &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &kp LHPR  ______      ______  ______      ______  ______  ______  &kp LEFT      &kp DOWN    &kp UP      &kp RIGHT     ______  &kp SLCK
+                ______  &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &kp LHPR  ______  ______      ______      ______  ______  ______  &kp LEFT      &kp DOWN    &kp UP      &kp RIGHT     ______  &kp SLCK
                 ______  ______    &kp K_APP  ______     ______     &kp LMEH                      ______      ______                  &kp C_PREV    &kp C_PP    &kp C_STOP  &kp C_NEXT    ______  &kp PAUSE_BREAK
-                ______  ______    ______     ______     ______               &mo VYGRFN  ______  ______      ______  ______  ______                ______      ______      ______        ______  ______
+                ______  ______    ______     ______     ______               ______  &mo VYGRFN  ______      ______  ______  ______                ______      ______      ______        ______  ______
             >;
         };
         
