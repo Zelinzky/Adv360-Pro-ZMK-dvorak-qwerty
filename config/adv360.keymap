@@ -24,6 +24,9 @@
 &lt {
     quick_tap_ms = <175>;
 };
+&caps_word {
+    continue-list = <UNDERSCORE>;
+};
 
 
 / {
